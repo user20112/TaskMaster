@@ -1,3 +1,5 @@
+using TaskMasterClient.ViewModels;
+
 namespace TaskMasterClient.Pages;
 
 public partial class RewardsPage : ContentPage
@@ -6,5 +8,6 @@ public partial class RewardsPage : ContentPage
 	{
 		InitializeComponent();
         Title = "Rewards";
+        BindingContext = new RewardsPageViewModel();
     }
 }

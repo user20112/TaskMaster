@@ -1,3 +1,5 @@
+using TaskMasterClient.ViewModels;
+
 namespace TaskMasterClient.Pages;
 
 public partial class AboutPage : ContentPage
@@ -6,6 +8,6 @@ public partial class AboutPage : ContentPage
 	{
 		InitializeComponent();
 		Title = "About";
-
+        BindingContext = new AboutPageViewModel();
     }
 }

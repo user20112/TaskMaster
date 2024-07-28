@@ -4,12 +4,9 @@
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="TaskMasterClient.Controls.FlyoutFooter">
     <StackLayout>
-        <Label Text="TaskMaster"
-               TextColor="GhostWhite"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-        <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+        <!-- {Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}-->
+        <Label Text="V10.10.8"
                TextColor="GhostWhite"
                HorizontalOptions="Center" />
-        </StackLayout>
+    </StackLayout>
 </ContentView>

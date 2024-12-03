@@ -45,7 +45,49 @@
             <Setter Property="Shell.BackgroundColor"
                     Value="{StaticResource Tertiary}" />
         </Style>
+        <Style x:Key="NotesShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="ProfileShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="PartnersShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="RewardHistoryShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="WeeklySummaryShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="JournalShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
         <Style x:Key="AboutShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Tertiary}" />
+        </Style>
+        <Style x:Key="SettingsShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
@@ -56,22 +98,25 @@
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
 
+    <Shell.FlyoutBackgroundColor>
+        <Color>#333333</Color>
+    </Shell.FlyoutBackgroundColor>
+    
     <Shell.FlyoutFooter>
         <controls:FlyoutFooter />
     </Shell.FlyoutFooter>
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Grid>
+            <Grid WidthRequest="200">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.1*"/>
-                    <ColumnDefinition Width="0.8*"/>
-                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="8*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="3"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="2"/>
                 </Grid.RowDefinitions>
-                <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource PrimaryAlternate}"/>
+                <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource PrimaryAlternate}"/>
                 <Label Grid.Column="1"
                 Text="{Binding Title}"
                    TextColor="white"
@@ -104,38 +149,75 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Label x:Name="pageTitle" FontSize="Large" TextColor="{StaticResource TertiaryText}" VerticalTextAlignment="Center" />
-            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Orange" Grid.Column="1" HorizontalOptions="End" />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="black" Grid.Column="1" Grid.RowSpan="2"  HorizontalOptions="End" />
+            <Label x:Name="futureChatButton" FontSize="Medium" Grid.Column="2" Grid.RowSpan="2" TextColor="{StaticResource TertiaryText}" VerticalTextAlignment="Center" Text="chat" />
         </Grid>
     </Shell.TitleView>
 
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Rewards"
-                           Route="Rewards"
-                  Style="{StaticResource RewardsShell}"
-                        Icon="heart.png"
-                        ContentTemplate="{DataTemplate pages:RewardsPage}"/>
+                      Route="Rewards"
+                      Style="{StaticResource RewardsShell}"
+                      Icon="heart.png"
+                      ContentTemplate="{DataTemplate pages:RewardsPage}"/>
         <ShellContent Title="Punishments"
-                           Route="Punishments"
-                  Style="{StaticResource PunishmentsShell}"
-                        Icon="whip.png"
-                        ContentTemplate="{DataTemplate pages:PunishmentsPage}"/>
+                      Route="Punishments"
+                      Style="{StaticResource PunishmentsShell}"
+                      Icon="whip.png"
+                      ContentTemplate="{DataTemplate pages:PunishmentsPage}"/>
         <ShellContent Title="Tasks"
-                           Route="Tasks"
-                  Style="{StaticResource TasksShell}"
-                        Icon="tasklist.png"
-                        ContentTemplate="{DataTemplate pages:TasksPage}"/>
+                      Route="Tasks"
+                      Style="{StaticResource TasksShell}"
+                      Icon="tasklist.png"
+                      ContentTemplate="{DataTemplate pages:TasksPage}"/>
+        <ShellContent Title="Notes"
+                      Route="Notes"
+                      Style="{StaticResource NotesShell}"
+                      Icon="notes.png"
+                      ContentTemplate="{DataTemplate pages:TasksPage}"/>
     </FlyoutItem>
+    <ShellContent Route="Profile"
+                  Style="{StaticResource ProfileShell}"
+                  Title="Profile"
+                  Icon="profile.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
+    <ShellContent Route="Partners"
+                  Style="{StaticResource PartnersShell}"
+                  Title="Partners"
+                  Icon="partners.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
+    <ShellContent Route="RewardHistory"
+                  Style="{StaticResource RewardHistoryShell}"
+                  Title="Reward History"
+                  Icon="rewardhistory.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
+    <ShellContent Route="WeeklySummary"
+                  Style="{StaticResource WeeklySummaryShell}"
+                  Title="Weekly Summary"
+                  Icon="weeklysummary.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
+    <ShellContent Route="Journal"
+                  Style="{StaticResource JournalShell}"
+                  Title="Journal"
+                  Icon="journal.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
     <ShellContent Route="About"
                   Style="{StaticResource AboutShell}"
                   Title="About"
                   Icon="info.png"
+                  ContentTemplate="{DataTemplate pages:AboutPage}" />
+    <ShellContent Route="Settings"
+                  Style="{StaticResource SettingsShell}"
+                  Title="Settings"
+                  Icon="settings.png"
                   ContentTemplate="{DataTemplate pages:AboutPage}" />
 
 </Shell>

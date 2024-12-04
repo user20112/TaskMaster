@@ -157,7 +157,11 @@
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <ActivityIndicator IsRunning="{Binding IsBusy}" Color="black" Grid.Column="1" Grid.RowSpan="2"  HorizontalOptions="End" />
-            <Label x:Name="futureChatButton" FontSize="Medium" Grid.Column="2" Grid.RowSpan="2" TextColor="{StaticResource TertiaryText}" VerticalTextAlignment="Center" Text="chat" />
+            <Image Source="chat.png" Grid.Column="2" Grid.RowSpan="2" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnChatTapped"/>
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </Shell.TitleView>
 

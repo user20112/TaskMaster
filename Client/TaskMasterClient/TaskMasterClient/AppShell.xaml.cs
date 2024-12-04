@@ -12,7 +12,10 @@ namespace TaskMasterClient
         protected override void OnNavigated(ShellNavigatedEventArgs args)
         {
             base.OnNavigated(args);
-            pageTitle.Text = Current.CurrentPage.Title;
+        }
+        private void OnChatTapped(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Chat image clicked!");
         }
     }
 }

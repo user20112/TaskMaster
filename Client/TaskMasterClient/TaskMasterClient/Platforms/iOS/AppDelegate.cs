@@ -1,7 +1,6 @@
-﻿using Foundation;
+﻿using CoreGraphics;
+using Foundation;
 using UIKit;
-using Microsoft.Maui.Controls;
-using CoreGraphics;
 
 namespace TaskMasterClient
 {

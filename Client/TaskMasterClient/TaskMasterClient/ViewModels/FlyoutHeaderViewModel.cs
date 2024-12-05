@@ -1,8 +1,7 @@
-﻿using System.ComponentModel;
-
+﻿
 namespace TaskMasterClient.ViewModels
 {
-    public class FlyoutHeaderViewModel : INotifyPropertyChanged
+    public class FlyoutHeaderViewModel : BaseViewModel
     {
         private string _profileImageSource;
 
@@ -19,11 +18,9 @@ namespace TaskMasterClient.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
+        internal void OnProfilePictureSelected(string selectedFile)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            throw new NotImplementedException();
         }
     }
 }

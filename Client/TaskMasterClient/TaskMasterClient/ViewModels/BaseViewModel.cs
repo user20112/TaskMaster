@@ -13,5 +13,4 @@ namespace TaskMasterClient.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
 }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskMasterClient.Pages.ProfilePage"
+             Title="ProfilePage">
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Grid VerticalOptions="Start" Padding="0" WidthRequest="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="85" />
+                <ColumnDefinition Width="75" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <!-- Define a single cell to hold the profile image -->
+            <Image Source="{Binding ProfileImageSource}"
+           Grid.Row="0"
+           Grid.RowSpan="2"
+           Grid.Column="1"
+           Grid.ColumnSpan="2"
+           Aspect="AspectFill"
+           HorizontalOptions="Start"
+           VerticalOptions="Start"
+           HeightRequest="120"
+           WidthRequest="120">
+                <Image.Clip>
+                    <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
+                </Image.Clip>
+            </Image>
+            <Image Source="edit.png"
+           Grid.Row="1"
+           Grid.RowSpan="2"
+           Grid.Column="2"
+           Grid.ColumnSpan="2"
+        Aspect="AspectFill"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        HeightRequest="40"
+        WidthRequest="40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEditImageTapped" />
+                </Image.GestureRecognizers>
+                <Image.Clip>
+                    <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
+                </Image.Clip>
+            </Image>
+        </Grid>
+
+        <!-- Nickname Text Entry -->
+            <Entry x:Name="NickNameEntry"
+                   Placeholder="NickName"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   Keyboard="Text" />
+
+            <!-- Email Text Entry -->
+            <Entry x:Name="EmailEntry"
+                   Placeholder="Email"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   Keyboard="Email" />
+
+            <!-- Logout Button -->
+            <Button Text="Logout"
+                    BackgroundColor="#FF6347"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnLogoutButtonClicked"/>
+
+            <!-- Reset Password Button -->
+            <Button Text="Reset Password"
+                    BackgroundColor="#FFD700"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnResetPasswordButtonClicked"/>
+
+            <!-- Delete Account Button -->
+            <Button Text="Delete Account"
+                    BackgroundColor="#DC143C"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnDeleteAccountButtonClicked"/>
+        </VerticalStackLayout>
+</ContentPage>

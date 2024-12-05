@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Views;
 
 namespace TaskMasterClient
 {
@@ -14,6 +13,7 @@ namespace TaskMasterClient
             Color statusBarColor = (Color)Microsoft.Maui.Controls.Application.Current!.Resources["Tertiary"];
             Window!.SetStatusBarColor(ToPlatformColor(statusBarColor));
         }
+
         private static Android.Graphics.Color ToPlatformColor(Color color)
         {
             return new Android.Graphics.Color((byte)(color.Red * 255), (byte)(color.Green * 255), (byte)(color.Blue * 255), (byte)(color.Alpha * 255));

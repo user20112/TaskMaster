@@ -5,7 +5,7 @@
              x:Class="TaskMasterClient.Controls.FlyoutFooter">
     <StackLayout>
         <!-- {Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}-->
-        <Label Text="0.0.1"
+        <Label Text="{Binding Version}"
                TextColor="GhostWhite"
                HorizontalOptions="Center" />
     </StackLayout>

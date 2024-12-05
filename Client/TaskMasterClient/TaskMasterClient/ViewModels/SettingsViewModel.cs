@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskMasterClient.ViewModels
 {
-    class AboutPageViewModel
+    internal class SettingsViewModel : BaseViewModel
     {
     }
 }

@@ -4,9 +4,9 @@
              x:Class="TaskMasterClient.Pages.PunishmentsPage"
              Title="PunishmentsPage">
     <VerticalStackLayout>
-        <Label 
+        <Label
             Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
+            VerticalOptions="Center"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

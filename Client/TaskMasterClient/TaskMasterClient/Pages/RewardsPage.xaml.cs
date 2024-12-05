@@ -4,10 +4,10 @@ namespace TaskMasterClient.Pages;
 
 public partial class RewardsPage : ContentPage
 {
-	public RewardsPage()
-	{
-		InitializeComponent();
+    public RewardsPage()
+    {
+        InitializeComponent();
         Title = "Rewards";
-        BindingContext = new RewardsPageViewModel();
+        BindingContext = new RewardsViewModel();
     }
 }

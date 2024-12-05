@@ -2,8 +2,76 @@
 <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="TaskMasterClient.Popups.SelectImagePopup">
-    <VerticalStackLayout>
-        <Label Text="need to make this popup complete, but my wife needs some attention :3" />
-    </VerticalStackLayout>
+               x:Class="TaskMasterClient.Popups.SelectImagePopup"
+               CanBeDismissedByTappingOutsideOfPopup="True"
+               Color="Transparent">
+
+    <!-- Frame with added padding for left and right buffer -->
+    <Frame BackgroundColor="{StaticResource Primary}" Padding="0, 0, 0, 0" BorderColor="Black" HasShadow="True"
+           HorizontalOptions="FillAndExpand" VerticalOptions="End" CornerRadius="20">
+
+        <!-- Main content inside the frame -->
+        <Grid VerticalOptions="Start" Padding="10, 0">
+            <!-- Add padding to the Grid for left and right sides -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <!-- Close Button -->
+            <Button Text="X"
+                    FontSize="16"
+                    TextColor="{StaticResource PrimaryText}"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Clicked="OnCloseButtonClicked"
+                    Margin="-10, 0, 0, 0" />
+            <!-- Keep Close button in place, add left margin -->
+
+            <!-- Title Label -->
+            <Label
+                   Text="{Binding TitleText}"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Row="0"
+                   Margin="0,10,0,10"
+                   TextColor="{StaticResource PrimaryText}" />
+
+            <!-- Buttons Section -->
+            <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="30" VerticalOptions="Center">
+                <!-- Camera Button -->
+                <Button BackgroundColor="{StaticResource Secondary}"
+                        CornerRadius="30"
+                        TextColor="{StaticResource SecondaryText}"
+                        WidthRequest="120"
+                        HeightRequest="50"
+                        Padding="5">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="📷" Color="{StaticResource SecondaryText}" Size="20" />
+                    </Button.ImageSource>
+                    <Button.Text>
+                        Camera
+                    </Button.Text>
+                </Button>
+
+                <!-- Gallery Button -->
+                <Button BackgroundColor="{StaticResource Secondary}"
+                        CornerRadius="30"
+                        TextColor="{StaticResource SecondaryText}"
+                        WidthRequest="120"
+                        HeightRequest="50"
+                        Padding="5">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="🖼️" Color="{StaticResource SecondaryText}" Size="20" />
+                    </Button.ImageSource>
+                    <Button.Text>
+                        Gallery
+                    </Button.Text>
+                </Button>
+            </HorizontalStackLayout>
+        </Grid>
+    </Frame>
 </toolkit:Popup>

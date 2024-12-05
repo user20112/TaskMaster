@@ -3,14 +3,14 @@
              x:Class="TaskMasterClient.Controls.FlyoutHeader">
     <Grid VerticalOptions="Start" Padding="0" WidthRequest="200">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition Width="85"/>
-            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="85" />
+            <ColumnDefinition Width="75" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <!-- Define a single cell to hold the profile image -->
         <Image Source="{Binding ProfileImageSource}"
@@ -24,7 +24,7 @@
                HeightRequest="120"
                WidthRequest="120">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnProfileImageTapped"/>
+                <TapGestureRecognizer Tapped="OnProfileImageTapped" />
             </Image.GestureRecognizers>
             <Image.Clip>
                 <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
@@ -41,7 +41,7 @@
             HeightRequest="40"
             WidthRequest="40">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnEditImageTapped"/>
+                <TapGestureRecognizer Tapped="OnEditImageTapped" />
             </Image.GestureRecognizers>
             <Image.Clip>
                 <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />

@@ -1,11 +1,19 @@
-﻿namespace TaskMasterClient
+﻿using TaskMasterClient.ViewModels;
+
+namespace TaskMasterClient
 {
     public partial class AppShell : Shell
     {
         public AppShell()
         {
             InitializeComponent();
-            BindingContext = this;
+            BindingContext = new AppShellViewModel()
+            {
+                IsBusy = false,
+                PartnerName = "August",
+                PartnerRole = "Submissive",
+                PartnersProfileImage = "profilepicture.png"
+            };
         }
 
         protected override void OnNavigated(ShellNavigatedEventArgs args)

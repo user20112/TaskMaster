@@ -58,7 +58,6 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\Edit.png" />
 	  <None Remove="Resources\Images\heart.png" />
-	  <None Remove="Resources\Images\info.svg" />
 	  <None Remove="Resources\Images\profilePicture.png" />
 	  <None Remove="Resources\Images\TaskList.png" />
 	  <None Remove="Resources\Images\whip.png" />

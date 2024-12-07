@@ -14,15 +14,15 @@ public partial class ProfilePage : ContentPage
     }
     private void OnLogoutButtonClicked(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Profile image clicked!");
+        System.Diagnostics.Debug.WriteLine("Lougout clicked!");
     }
     private void OnResetPasswordButtonClicked(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Profile image clicked!");
+        System.Diagnostics.Debug.WriteLine("reset password clicked!");
     }
     private void OnDeleteAccountButtonClicked(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Profile image clicked!");
+        System.Diagnostics.Debug.WriteLine("Delete button clicked!");
     }
 
     private async void OnEditImageTapped(object sender, EventArgs e)

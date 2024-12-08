@@ -1,4 +1,5 @@
-﻿using TaskMasterClient.ViewModels;
+﻿using TaskMasterClient.Pages;
+using TaskMasterClient.ViewModels;
 
 namespace TaskMasterClient
 {
@@ -21,9 +22,14 @@ namespace TaskMasterClient
             base.OnNavigated(args);
         }
 
-        private void OnChatTapped(object sender, EventArgs e)
+        private async void OnChatTapped(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Chat image clicked!");
+            await Shell.Current.CurrentPage.Navigation.PushAsync(new ChatPage());
+        }
+
+        private async void onPartnerTapped(object sender, TappedEventArgs e)
+        {
+            await Shell.Current.CurrentPage.Navigation.PushAsync(new PartnersPage());
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskMasterClient.ViewModels
+namespace TaskMasterClient.ViewModels.Pages
 {
     internal class SettingsViewModel : BaseViewModel
     {

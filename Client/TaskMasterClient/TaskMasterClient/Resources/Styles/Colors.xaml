@@ -14,11 +14,11 @@
     <Color x:Key="SecondaryAlternate">#555555</Color>
     <Color x:Key="SecondaryDisabled">#aaaaaa</Color>
     <Color x:Key="SecondaryText">White</Color>
-    <Color x:Key="Tertiary">#c92223</Color>
-    <Color x:Key="TertiaryAlternate">#b01c1d</Color>
+    <Color x:Key="Tertiary">#911718</Color>
+    <Color x:Key="TertiaryAlternate">#701112</Color>
     <Color x:Key="TertiaryText">White</Color>
-    <Color x:Key="Quintary">#c92223</Color>
-    <Color x:Key="QuintaryAlternate">#b01c1d</Color>
+    <Color x:Key="Quintary">#ffa700</Color>
+    <Color x:Key="QuintaryAlternate">#cc8500</Color>
     <Color x:Key="QuintaryText">White</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>

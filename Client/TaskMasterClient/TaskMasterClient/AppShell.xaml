@@ -12,7 +12,7 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     FlyoutWidth="250"
     FlyoutBackgroundColor="{StaticResource Primary}"
-    Shell.TabBarUnselectedColor="{StaticResource PrimaryText}"
+    Shell.TabBarUnselectedColor="{StaticResource PrimaryDisabled}"
     Shell.TabBarForegroundColor="{StaticResource Tertiary}"
     Shell.TabBarTitleColor="{StaticResource Tertiary}"
     Shell.TabBarBackgroundColor="{StaticResource Secondary}">
@@ -164,6 +164,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="50" />
                 <!-- For the profile image and text layout -->
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -176,6 +177,9 @@
                Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
                WidthRequest="40" HeightRequest="40" 
                HorizontalOptions="Start" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onPartnerTapped" />
+                </Image.GestureRecognizers>
                 <Image.Clip>
                     <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
                 </Image.Clip>
@@ -194,8 +198,8 @@
                TextColor="White" FontSize="14" />
 
             <!-- Chat Icon -->
-            <Image Source="chat.png" Grid.Column="4" Grid.RowSpan="2" 
-               HorizontalOptions="End" VerticalOptions="Center"  Margin="0,0,10,0">
+            <Image Source="chat.png" Grid.Column="5" Grid.RowSpan="2" 
+               HorizontalOptions="End" VerticalOptions="Center"  Margin="0,0,20,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnChatTapped" />
                 </Image.GestureRecognizers>

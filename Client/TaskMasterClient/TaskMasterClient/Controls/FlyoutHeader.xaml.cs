@@ -1,4 +1,5 @@
 using CommunityToolkit.Maui.Views;
+using TaskMasterClient.Pages;
 using TaskMasterClient.Popups;
 using TaskMasterClient.ViewModels;
 
@@ -15,9 +16,9 @@ public partial class FlyoutHeader : ContentView
         };
     }
 
-    private void OnProfileImageTapped(object sender, EventArgs e)
+    private async void OnProfileImageTapped(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Profile image clicked!");
+        await Shell.Current.CurrentPage.Navigation.PushAsync(new ProfilePage());
     }
 
     private async void OnEditImageTapped(object sender, EventArgs e)

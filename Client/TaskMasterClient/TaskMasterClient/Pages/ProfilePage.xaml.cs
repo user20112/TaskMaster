@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using TaskMasterClient.Popups;
 using TaskMasterClient.ViewModels;
+using TaskMasterClient.ViewModels.Pages;
 
 namespace TaskMasterClient.Pages;
 
@@ -29,7 +30,7 @@ public partial class ProfilePage : ContentPage
     {
         var popup = new SelectImagePopup("Select Profile Picture", (string selectedFile) =>
         {
-            (BindingContext as ProfileViewModel)!.OnProfilePictureSelected(selectedFile);
+            ((ProfileViewModel)BindingContext)!.OnProfilePictureSelected(selectedFile);
         });
         await Shell.Current.CurrentPage.ShowPopupAsync(popup);
     }

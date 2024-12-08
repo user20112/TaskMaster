@@ -1,5 +1,6 @@
 using TaskMasterClient.ViewModels;
 
+using TaskMasterClient.ViewModels.Pages;
 namespace TaskMasterClient.Pages;
 
 public partial class ChatPage : ContentPage

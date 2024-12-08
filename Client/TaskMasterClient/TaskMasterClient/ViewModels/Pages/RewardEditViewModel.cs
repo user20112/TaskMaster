@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskMasterClient.ViewModels.Pages
 {
-    class PartnersViewModel : BaseViewModel
+    class RewardEditViewModel
     {
     }
 }

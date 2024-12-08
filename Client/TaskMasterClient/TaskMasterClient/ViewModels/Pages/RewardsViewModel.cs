@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using TaskMasterClient.ViewClasses;
 
-namespace TaskMasterClient.ViewModels
+namespace TaskMasterClient.ViewModels.Pages
 {
     internal class RewardsViewModel : BaseViewModel
     {

@@ -4,7 +4,6 @@
              x:Class="TaskMasterClient.Pages.ProfilePage"
              Title="ProfilePage">
     <VerticalStackLayout Padding="20" Spacing="20">
-
         <Grid VerticalOptions="Start" Padding="0" WidthRequest="200">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40" />
@@ -16,7 +15,6 @@
                 <RowDefinition Height="60" />
                 <RowDefinition Height="30" />
             </Grid.RowDefinitions>
-            <!-- Define a single cell to hold the profile image -->
             <Image Source="{Binding ProfileImageSource}"
            Grid.Row="0"
            Grid.RowSpan="2"
@@ -49,45 +47,35 @@
                 </Image.Clip>
             </Image>
         </Grid>
-
-        <!-- Nickname Text Entry -->
-            <Entry x:Name="NickNameEntry"
+        <Entry x:Name="NickNameEntry"
                    Placeholder="NickName"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="CenterAndExpand"
-                   TextColor="Black"
+                   TextColor="{StaticResource PrimaryText}"
                    Keyboard="Text" />
-
-            <!-- Email Text Entry -->
-            <Entry x:Name="EmailEntry"
-                   Placeholder="Email"
+        <Entry x:Name="EmailEntry"
+                   Placeholder="Email (Optional, but only way to recover password)"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="CenterAndExpand"
-                   TextColor="Black"
+                   TextColor="{StaticResource PrimaryText}"
                    Keyboard="Email" />
-
-            <!-- Logout Button -->
-            <Button Text="Logout"
-                    BackgroundColor="#FF6347"
-                    TextColor="White"
+        <Button Text="Logout"
+                    BackgroundColor="{StaticResource Secondary}"
+                    TextColor="{StaticResource SecondaryText}"
                     VerticalOptions="CenterAndExpand"
                     HorizontalOptions="FillAndExpand"
                     Clicked="OnLogoutButtonClicked"/>
-
-            <!-- Reset Password Button -->
-            <Button Text="Reset Password"
-                    BackgroundColor="#FFD700"
-                    TextColor="Black"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="FillAndExpand"
-                    Clicked="OnResetPasswordButtonClicked"/>
-
-            <!-- Delete Account Button -->
-            <Button Text="Delete Account"
-                    BackgroundColor="#DC143C"
-                    TextColor="White"
+        <Button Text="Delete Account"
+                    BackgroundColor="{StaticResource Secondary}"
+                    TextColor="{StaticResource SecondaryText}"
                     VerticalOptions="CenterAndExpand"
                     HorizontalOptions="FillAndExpand"
                     Clicked="OnDeleteAccountButtonClicked"/>
-        </VerticalStackLayout>
+        <Button Text="Save"
+                    BackgroundColor="{StaticResource Secondary}"
+                    TextColor="{StaticResource SecondaryText}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnSaveClicked"/>
+    </VerticalStackLayout>
 </ContentPage>

@@ -20,6 +20,6 @@ public partial class RewardsPage : ContentPage
 
     private void rewardTapped(object sender, TappedEventArgs e)
     {
-        ((RewardsViewModel)BindingContext)!.ViewDetail(button?.BindingContext as RewardViewModel);
+        ((RewardsViewModel)BindingContext)!.ViewDetail((sender as Button)?.BindingContext as RewardViewModel);
     }
 }

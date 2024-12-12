@@ -15,15 +15,15 @@ public partial class ProfilePage : ContentPage
     }
     private void OnLogoutButtonClicked(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Lougout clicked!");
-    }
-    private void OnResetPasswordButtonClicked(object sender, EventArgs e)
-    {
-        System.Diagnostics.Debug.WriteLine("reset password clicked!");
+        (BindingContext as ProfileViewModel).OnLogout();
     }
     private void OnDeleteAccountButtonClicked(object sender, EventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("Delete button clicked!");
+        (BindingContext as ProfileViewModel).OnDelete();
+    }
+    private void OnSaveClicked(object sender, EventArgs e)
+    {
+        (BindingContext as ProfileViewModel).OnSave(NickNameEntry.Text,EmailEntry.Text);
     }
 
     private async void OnEditImageTapped(object sender, EventArgs e)

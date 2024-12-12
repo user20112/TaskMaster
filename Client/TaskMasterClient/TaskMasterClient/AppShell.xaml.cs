@@ -24,11 +24,13 @@ namespace TaskMasterClient
 
         private async void OnChatTapped(object sender, EventArgs e)
         {
-            await Shell.Current.CurrentPage.Navigation.PushAsync(new ChatPage());
+            if (Shell.Current.CurrentPage is not ChatPage)
+                await Shell.Current.CurrentPage.Navigation.PushAsync(new ChatPage());
         }
 
         private async void onPartnerTapped(object sender, TappedEventArgs e)
         {
+            if(Shell.Current.CurrentPage is not PartnersPage)
             await Shell.Current.CurrentPage.Navigation.PushAsync(new PartnersPage());
         }
     }

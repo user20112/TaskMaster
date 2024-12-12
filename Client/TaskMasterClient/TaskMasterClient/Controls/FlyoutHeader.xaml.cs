@@ -18,7 +18,8 @@ public partial class FlyoutHeader : ContentView
 
     private async void OnProfileImageTapped(object sender, EventArgs e)
     {
-        await Shell.Current.CurrentPage.Navigation.PushAsync(new ProfilePage());
+        if (Shell.Current.CurrentPage is not ProfilePage)
+            await Shell.Current.CurrentPage.Navigation.PushAsync(new ProfilePage());
     }
 
     private async void OnEditImageTapped(object sender, EventArgs e)

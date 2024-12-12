@@ -54,5 +54,10 @@ namespace TaskMasterClient.ViewModels.Pages
         public void PurchaseReward(RewardViewModel? rewardViewModel)
         {
         }
+
+        public void ViewDetail(RewardViewModel? rewardViewModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

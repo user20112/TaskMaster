@@ -1,24 +1,23 @@
 ﻿using CommunityToolkit.Maui.Views;
 using TaskMasterClient.ViewModels;
 
-namespace TaskMasterClient.Popups
+namespace TaskMasterClient.Popups;
+
+public partial class SelectImagePopup : Popup
 {
-    public partial class SelectImagePopup : Popup
+
+    public SelectImagePopup(string titleText, Action<string> onImageSelected)
     {
-
-        public SelectImagePopup(string titleText, Action<string> onImageSelected)
+        InitializeComponent();
+        BindingContext = new SelectImageViewModel()
         {
-            InitializeComponent();
-            BindingContext = new SelectImageViewModel()
-            {
-                TitleText = titleText,
-                OnImageSelected = onImageSelected
-            };
-        }
+            TitleText = titleText,
+            OnImageSelected = onImageSelected
+        };
+    }
 
-        private async void OnCloseButtonClicked(object sender, EventArgs e)
-        {
-            await this.CloseAsync();
-        }
+    private async void OnCloseButtonClicked(object sender, EventArgs e)
+    {
+        await this.CloseAsync();
     }
 }

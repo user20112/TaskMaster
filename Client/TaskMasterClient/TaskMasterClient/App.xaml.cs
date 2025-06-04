@@ -1,24 +1,38 @@
-﻿namespace TaskMasterClient
+﻿using TaskMasterClient.Interfaces;
+using TaskMasterClient.Pages;
+using TaskMasterClient.Pages.Base;
+using TaskMasterClient.Services;
+
+namespace TaskMasterClient;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public static INavigationService NavigationService;
+    public static AppSettingsService AppSettingsService;
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
+        InitializeServices();
+        InitializeComponent();
+    }
 
-            MainPage = new AppShell();
-        }
-
-        protected override Window CreateWindow(IActivationState activationState)
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        if (this.MainPage == null)
         {
-            var window = base.CreateWindow(activationState);
-            const int newWidth = 350;
-            const int newHeight = 700;
-            window.Width = newWidth;
-            window.Height = newHeight;
-            window.MaximumHeight = newHeight;
-            window.MaximumWidth = newWidth;
-            return window;
+            this.MainPage = NavigationService.Init<MainFlyoutPage>();
         }
+        var window = base.CreateWindow(activationState);
+        const int newWidth = 350;
+        const int newHeight = 700;
+        window.Width = newWidth;
+        window.Height = newHeight;
+        window.MaximumHeight = newHeight;
+        window.MaximumWidth = newWidth;
+        return window;
+    }
+    public void InitializeServices()
+    {
+        NavigationService = new NavigationService();
+        AppSettingsService = new AppSettingsService();
     }
 }

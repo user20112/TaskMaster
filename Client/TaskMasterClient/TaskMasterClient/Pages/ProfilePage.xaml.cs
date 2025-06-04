@@ -1,11 +1,12 @@
 using CommunityToolkit.Maui.Views;
+using TaskMasterClient.Pages.Base;
 using TaskMasterClient.Popups;
 using TaskMasterClient.ViewModels;
 using TaskMasterClient.ViewModels.Pages;
 
 namespace TaskMasterClient.Pages;
 
-public partial class ProfilePage : ContentPage
+public partial class ProfilePage : BasePage
 {
     public ProfilePage()
     {

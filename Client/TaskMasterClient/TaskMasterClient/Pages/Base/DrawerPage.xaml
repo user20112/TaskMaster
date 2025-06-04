@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Pages:BasePage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TaskMasterClient.Pages.Base.DrawerPage"
+    xmlns:Pages="clr-namespace:TaskMasterClient.Pages.Base"
+    xmlns:viewModelBase="clr-namespace:TaskMasterClient.ViewModels.Base">
+    <ContentPage.IconImageSource>
+        <FileImageSource File="ic_menu.png" />
+    </ContentPage.IconImageSource>
+    <Grid
+        Margin="0"
+        RowSpacing="0"
+        Padding="0"
+        BackgroundColor="{StaticResource Tertiary}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border
+            Padding="0"
+            Margin="0"
+            StrokeThickness="0"
+            BackgroundColor="{StaticResource Tertiary}"
+            Grid.Row="0"
+            HeightRequest="52">
+
+            <Label
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"
+                FontSize="{StaticResource Subtitle}"
+                Text="Task Master"
+                TextColor="{StaticResource TertiaryText}"
+                Margin="{OnPlatform iOS='0,15,0,10', Default=0}" />
+        </Border>
+
+        <CollectionView
+            Grid.Row="1"
+            x:Name="_listView"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource Primary}"
+            ItemsSource="{Binding Menus, Mode=TwoWay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        Margin="5,0,0,0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OnTapped}" />
+                        </Grid.GestureRecognizers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            x:Name="ItemImage"
+                            Margin="4,7"
+                            Aspect="AspectFit"
+                            HeightRequest="30"
+                            HorizontalOptions="Center"
+                            Source="{Binding Image}"
+                            VerticalOptions="Center" />
+                        <Label
+                            Grid.Column="1"
+                            FontSize="{StaticResource Small}"
+                            Text="{Binding Text}"
+                            LineBreakMode="WordWrap"
+                            HorizontalOptions="FillAndExpand"
+                            TextColor="{StaticResource PrimaryText}"
+                            VerticalOptions="CenterAndExpand" />
+
+                        <BoxView
+                            HeightRequest="1"
+                            BackgroundColor="Gray"
+                            VerticalOptions="EndAndExpand"
+                            Grid.ColumnSpan="2"
+                            Margin="0,10,0,0" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</Pages:BasePage>

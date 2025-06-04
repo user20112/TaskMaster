@@ -1,6 +1,7 @@
-﻿namespace TaskMasterClient.ViewModels.Pages
+﻿using TaskMasterClient.ViewModels.Base;
+
+namespace TaskMasterClient.ViewModels.Pages;
+
+public class JournalViewModel : BasePageViewModel
 {
-    public class JournalViewModel : BaseViewModel
-    {
-    }
 }

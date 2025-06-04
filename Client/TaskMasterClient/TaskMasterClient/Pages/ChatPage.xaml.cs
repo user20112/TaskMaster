@@ -1,9 +1,10 @@
+using TaskMasterClient.Pages.Base;
 using TaskMasterClient.ViewModels;
 
 using TaskMasterClient.ViewModels.Pages;
 namespace TaskMasterClient.Pages;
 
-public partial class ChatPage : ContentPage
+public partial class ChatPage : BasePage
 {
     public ChatPage()
     {

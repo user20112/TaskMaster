@@ -1,9 +1,10 @@
+using TaskMasterClient.Pages.Base;
 using TaskMasterClient.ViewModels;
 
 using TaskMasterClient.ViewModels.Pages;
 namespace TaskMasterClient.Pages;
 
-public partial class LoginPage : ContentPage
+public partial class LoginPage : BasePage
 {
 	public LoginPage()
 	{
@@ -18,5 +19,9 @@ public partial class LoginPage : ContentPage
     public void OnResetPasswordButtonClicked(object sender, EventArgs e)
     {
         (BindingContext as LoginViewModel).OnResetPassword(NicknameEntry.Text);
+    }
+    public void OnEditImageTapped(object sender, EventArgs e)
+    {
+        (BindingContext as LoginViewModel).OnEditImageTapped(NicknameEntry.Text);
     }
 }

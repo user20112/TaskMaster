@@ -1,26 +1,25 @@
 ﻿
-namespace TaskMasterClient.ViewModels
-{
-    public class FlyoutHeaderViewModel : BaseViewModel
-    {
-        private string _profileImageSource;
+namespace TaskMasterClient.ViewModels;
 
-        public string ProfileImageSource
+public class FlyoutHeaderViewModel : BaseViewModel
+{
+    private string _profileImageSource;
+
+    public string ProfileImageSource
+    {
+        get => _profileImageSource;
+        set
         {
-            get => _profileImageSource;
-            set
+            if (_profileImageSource != value)
             {
-                if (_profileImageSource != value)
-                {
-                    _profileImageSource = value;
-                    OnPropertyChanged(nameof(ProfileImageSource));
-                }
+                _profileImageSource = value;
+                OnPropertyChanged(nameof(ProfileImageSource));
             }
         }
+    }
 
-        internal void OnProfilePictureSelected(string selectedFile)
-        {
-            throw new NotImplementedException();
-        }
+    internal void OnProfilePictureSelected(string selectedFile)
+    {
+        throw new NotImplementedException();
     }
 }

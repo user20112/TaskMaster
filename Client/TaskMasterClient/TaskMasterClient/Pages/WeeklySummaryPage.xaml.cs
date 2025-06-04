@@ -1,9 +1,9 @@
-using TaskMasterClient.ViewModels;
+using TaskMasterClient.Pages.Base;
 using TaskMasterClient.ViewModels.Pages;
 
 namespace TaskMasterClient.Pages;
 
-public partial class WeeklySummaryPage : ContentPage
+public partial class WeeklySummaryPage : BasePage
 {
     public WeeklySummaryPage()
     {

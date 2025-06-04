@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaskMasterClient.ViewModels.Base;
 
-namespace TaskMasterClient.ViewModels.Pages
+namespace TaskMasterClient.ViewModels.Pages;
+
+class RewardEditViewModel: BasePageViewModel
 {
-    class RewardEditViewModel
-    {
-    }
 }

@@ -1,20 +1,19 @@
-﻿namespace TaskMasterClient.ViewModels
-{
-    public class SelectImageViewModel : BaseViewModel
-    {
-        public Action<string> OnImageSelected { get; set; }
-        private string _titleText;
+﻿namespace TaskMasterClient.ViewModels;
 
-        public string TitleText
+public class SelectImageViewModel : BasePopupViewModel
+{
+    public Action<string> OnImageSelected { get; set; }
+    private string _titleText;
+
+    public string TitleText
+    {
+        get => _titleText;
+        set
         {
-            get => _titleText;
-            set
+            if (_titleText != value)
             {
-                if (_titleText != value)
-                {
-                    _titleText = value;
-                    OnPropertyChanged(nameof(TitleText));
-                }
+                _titleText = value;
+                OnPropertyChanged(nameof(TitleText));
             }
         }
     }

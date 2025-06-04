@@ -1,8 +1,9 @@
+using TaskMasterClient.Pages.Base;
 using TaskMasterClient.ViewModels.Pages;
 
 namespace TaskMasterClient.Pages;
 
-public partial class RewardDetailPage : ContentPage
+public partial class RewardDetailPage : BasePage
 {
 	public RewardDetailPage()
 	{

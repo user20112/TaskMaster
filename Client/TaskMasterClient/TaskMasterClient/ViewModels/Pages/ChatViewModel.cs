@@ -1,6 +1,7 @@
-﻿namespace TaskMasterClient.ViewModels.Pages
+﻿using TaskMasterClient.ViewModels.Base;
+
+namespace TaskMasterClient.ViewModels.Pages;
+
+internal class ChatViewModel : BasePageViewModel
 {
-    internal class ChatViewModel : BaseViewModel
-    {
-    }
 }

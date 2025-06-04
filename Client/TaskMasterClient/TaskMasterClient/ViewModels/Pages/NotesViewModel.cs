@@ -1,6 +1,7 @@
-﻿namespace TaskMasterClient.ViewModels.Pages
+﻿using TaskMasterClient.ViewModels.Base;
+
+namespace TaskMasterClient.ViewModels.Pages;
+
+internal class NotesViewModel : BasePageViewModel
 {
-    internal class NotesViewModel : BaseViewModel
-    {
-    }
 }
